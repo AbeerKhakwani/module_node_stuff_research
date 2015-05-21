@@ -4,3 +4,9 @@
 [submodule "sites/all/modules/ping_pong"]
 	path = sites/all/modules/ping_pong
 	url = https://github.com/kdv24/DrupalPingPong.git
+[submodule "sites/all/modules/sum"]
+	path = sites/all/modules/sum
+	url = https://github.com/kdv24/sum_module.git
+[submodule "sites/all/modules/pingpong"]
+	path = sites/all/modules/pingpong
+	url = https://github.com/kdv24/DrupalPingPong.git
