@@ -73,14 +73,17 @@
            <?php if ($logo): ?><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /><?php endif; ?>
           <span><?php print $site_name; ?></span>
         </a>
+
+        <?php print render($page['tagline']); ?>
       </h1>
+
        <?php if ($site_slogan): ?><h2 id="site-slogan"><?php print $site_slogan; ?></h2><?php endif; ?>
     </hgroup>
     <?php if (theme_get_setting('socialicon_display', 'creative')): ?>
-      <?php 
-      $twitter_url = check_plain(theme_get_setting('twitter_url', 'creative')); 
-      $facebook_url = check_plain(theme_get_setting('facebook_url', 'creative')); 
-      $google_plus_url = check_plain(theme_get_setting('google_plus_url', 'creative')); 
+      <?php
+      $twitter_url = check_plain(theme_get_setting('twitter_url', 'creative'));
+      $facebook_url = check_plain(theme_get_setting('facebook_url', 'creative'));
+      $google_plus_url = check_plain(theme_get_setting('google_plus_url', 'creative'));
       $pinterest_url = check_plain(theme_get_setting('pinterest_url', 'creative'));
       ?>
     <div class="social-icon">
@@ -106,7 +109,7 @@
     <div class="row-end"></div>
     <nav id="navigation" role="navigation">
       <div id="main-menu">
-        <?php 
+        <?php
           if (module_exists('i18n_menu')) {
             $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
           } else {
@@ -119,10 +122,10 @@
     <div class="row-end"></div>
     <?php if ($is_front): ?>
     <?php if (theme_get_setting('slideshow_display','creative')): ?>
-    <?php 
-    $slide1_desc = check_markup(theme_get_setting('slide1_desc', 'creative'), 'full_html'); 
-    $slide2_desc = check_markup(theme_get_setting('slide2_desc', 'creative'), 'full_html'); 
-    $slide3_desc = check_markup(theme_get_setting('slide3_desc', 'creative'), 'full_html'); 
+    <?php
+    $slide1_desc = check_markup(theme_get_setting('slide1_desc', 'creative'), 'full_html');
+    $slide2_desc = check_markup(theme_get_setting('slide2_desc', 'creative'), 'full_html');
+    $slide3_desc = check_markup(theme_get_setting('slide3_desc', 'creative'), 'full_html');
     ?>
     <div class="featured-slider">
       <div class="slides displayblock">
@@ -150,7 +153,7 @@
       </div> <!-- .slides -->
 
     </div>
-    <div id="controllers"></div><!-- #controllers --> 
+    <div id="controllers"></div><!-- #controllers -->
     <?php endif; ?>
     <?php endif; ?>
   </div>
@@ -194,13 +197,13 @@
   <?php if ($page['sidebar_first']): ?>
     <aside id="sidebar" role="complementary" class="col4">
      <?php print render($page['sidebar_first']); ?>
-    </aside> 
+    </aside>
   <?php endif; ?>
   <div class="row-end"></div>
 </div>
 
 <div id="footer-bottom" class="layout-978">
-  <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?>
+  <?php if ($page['footer_first'] || $page['footer_second'] || $page['tagline']): ?>
     <div id="footer-one" class="col4">
       <?php print render ($page['footer_first']); ?>
     </div>
@@ -208,11 +211,11 @@
       <?php print render ($page['footer_second']); ?>
     </div>
     <div id="footer-three" class="col4">
-      <?php print render ($page['footer_third']); ?>
+        <?php print render($page['tagline']); ?>
     </div>
     <div class="row-end"></div>
   <?php endif; ?>
-  
+
   <?php print render($page['footer']); ?>
 
 </div>
