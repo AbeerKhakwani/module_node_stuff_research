@@ -1,22 +1,27 @@
 
 <?php
 
-// function makemymodule_view($node, $view_mode, $langcode = NULL) {
-//     print("hello how are you?");
-// }
-
-
-
-// function makemynodenode_view_alter(&$build)_view($node,$view_mode,$langcode=NULL) {
-//    drupal_set_message("hello how are you?");
-// }
+//so gets some things working
 function makemynode_node_view_alter(&$build){
-    drupal_set_message("hello how are you?");
+
+
+    // $node= node_load(2);
+    // $title=$node->title;
+    // print "<pre>";
+    // print_r($node);
+    // print "</pre>";
+
     print "<pre>";
-    print_r($build['body']);
+    print_r($build['body']['#object']->nid);
     print "</pre>";
 
-    // if ($build['body']['#object']['nid'] > 0) {
-    //     drupal_set_message('hello again');
-    // }
+// $page = 'page';
+// $nodes = node_load_multiple(array(), array('type' => $page));
+//   print "<pre>";
+//   print_r( $nodes);
+//   print "</pre>";
+// foreach($nodes as $page) {
+//         print $page->nid;
+//         print $page->title;
+//     }
 }
