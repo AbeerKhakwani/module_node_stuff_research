@@ -1,0 +1,22 @@
+
+<?php
+
+// function makemymodule_view($node, $view_mode, $langcode = NULL) {
+//     print("hello how are you?");
+// }
+
+
+
+// function makemynodenode_view_alter(&$build)_view($node,$view_mode,$langcode=NULL) {
+//    drupal_set_message("hello how are you?");
+// }
+function makemynode_node_view_alter(&$build){
+    drupal_set_message("hello how are you?");
+    print "<pre>";
+    print_r($build['body']);
+    print "</pre>";
+
+    // if ($build['body']['#object']['nid'] > 0) {
+    //     drupal_set_message('hello again');
+    // }
+}

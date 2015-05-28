@@ -1,0 +1,6 @@
+name = Make My Node
+description = Makes a page
+package = Custom
+core = 7.x
+files[] = makemynode.install
+files[] = makemynode.module
